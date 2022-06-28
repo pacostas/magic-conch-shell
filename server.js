@@ -18,5 +18,9 @@ const server = createServer((req, res) => {
   }
 });
 
+function handle(signal) {
+  console.log(`*^!@4=> Received event: ${signal}`);
+}
+process.on("SIGHUP", handle);
 
 server.listen(PORT, () => console.log(`Server running on port:  ${PORT}`));
